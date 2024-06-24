@@ -3,7 +3,6 @@ from utils.common.logger import configure_logger
 from models.bad_request_error import BadRequestError
 from utils.database import DatabaseConnectionManager
 from models.custom_response import CustomResponse
-import logging 
 
 #Configuration of the logger
 get_module_logger = configure_logger()
@@ -18,6 +17,7 @@ def update_user_by_id_using_patch_handler(event, context):
       body = json.loads(event["body"])
       userId : str = event["pathParameters"]["_id"]
 
+      #TODO : add input validator
 
       #* Checking that userId is not None
       if not userId.strip():

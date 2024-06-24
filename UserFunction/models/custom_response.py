@@ -13,7 +13,7 @@ class CustomJSONEncoder(json.JSONEncoder):
             return str(obj)
         return super().default(obj)
 
-class CustomResponse:
+class CustomResponse: #FIXME : CHANGE NAME
     """
     This class is used to create a custom response for the API calls.
     """

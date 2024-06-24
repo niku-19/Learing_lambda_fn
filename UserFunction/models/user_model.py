@@ -18,9 +18,8 @@ The class also includes several validation methods to ensure the data integrity 
 
 import datetime
 import re
-from pydantic import BaseModel, EmailStr, Field, StrictBool, StrictInt, StrictStr, field_validator, model_validator, validator
+from pydantic import BaseModel, EmailStr, Field, StrictBool, StrictInt, StrictStr, field_validator, model_validator
 import os
-from bson import ObjectId
 import bcrypt
 
 DATE_TIME_FORMAT = os.environ.get('DATE_TIME_FORMAT','%Y-%m-%d %H:%M:%S')

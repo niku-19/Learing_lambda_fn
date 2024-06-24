@@ -6,11 +6,11 @@ import inspect
 from colorlog import ColoredFormatter
 
 # Create the logger folder if it doesn't exist
-log_folder = Path("/Users/nikhil/Desktop/work/Backend/Learning/Rest API/UserFunction/logger")
+log_folder = Path("/Users/nikhil/Desktop/work/Backend/Learning/Rest API/UserFunction/logger") #FIXME: ABSOLUTE PATH
 log_folder.mkdir(exist_ok=True)
 
 # Define a function to get the caller's module name
-def get_caller_module_name():
+def get_caller_module_name(): 
     frame = inspect.stack()[2]
     module = inspect.getmodule(frame[0])
     if module:

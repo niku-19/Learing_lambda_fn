@@ -5,7 +5,6 @@ from routes import switcher
 from typing import Any, Dict
 from utils.common.logger import configure_logger
 from models.bad_request_error import BadRequestError
-import logging
 
 get_module_logger = configure_logger()
 
@@ -29,6 +28,3 @@ def lambda_handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
         logger.error(f"Error: {e}")
         internal_server_error = InternalServerError(str(e))
         return internal_server_error.response()
-
-
-    

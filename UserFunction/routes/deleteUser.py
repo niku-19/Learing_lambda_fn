@@ -1,11 +1,7 @@
 from models.bad_request_error import BadRequestError
 from utils.database import DatabaseConnectionManager
 from models.custom_response import CustomResponse
-from http import HTTPStatus
 from utils.common.logger import configure_logger
-from pymongo.database import Database
-from models.user_model import User
-import logging
 
 #* Configuring the logger 
 get_module_logger = configure_logger()
@@ -29,7 +25,6 @@ def delete_user_by_id_handler(event , context):
             #* deleting user
             db.users.delete_one({"_id": user_id})
 
-      #* Unsubscribing the logger 
       return CustomResponse(body={"message": "User deleted successfully"}, data = user_id ).response()
 
 
