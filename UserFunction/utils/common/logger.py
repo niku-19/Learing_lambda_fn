@@ -68,15 +68,3 @@ def configure_logger():
         return logging.getLogger(logger_name)
 
     return get_module_logger
-
-# # Configure the logger at the root level
-# get_module_logger = configure_logger()
-
-# # Example usage of the logger
-# if __name__ == "__main__":
-#     logger = get_module_logger()
-#     logger.debug("This is a debug message")
-#     logger.info("This is an info message")
-#     logger.warning("This is a warning message")
-#     logger.error("This is an error message")
-#     logger.critical("This is a critical message")

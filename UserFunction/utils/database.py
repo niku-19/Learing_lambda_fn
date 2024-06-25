@@ -3,7 +3,11 @@ import pymongo
 from pymongo import MongoClient
 from models.internal_server_error import InternalServerError
 from pymongo.database import Database
+from utils.common.logger import configure_logger
 
+
+get_module_logger = configure_logger()
+logger  = get_module_logger()
 
 
 

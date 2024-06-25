@@ -35,8 +35,8 @@ class User(BaseModel):
     password: StrictStr = Field(..., min_length=8)
     isEnabled: StrictBool
     birthday: StrictStr  | datetime.datetime  # FIXME: SHOULD ONLY ACCEPT DATE-TIME FORMATE STRING
-    createdAt: str = Field(default_factory = lambda: datetime.datetime.strptime(str(datetime.datetime.now().strftime(DATE_TIME_FORMAT)) , DATE_TIME_FORMAT))
-    updatedAt: str = Field(default_factory = lambda: datetime.datetime.strptime(str(datetime.datetime.now().strftime(DATE_TIME_FORMAT)) , DATE_TIME_FORMAT))
+    createdAt: StrictStr  | datetime.datetime = Field(default_factory = lambda: datetime.datetime.strptime(str(datetime.datetime.now().strftime(DATE_TIME_FORMAT)) , DATE_TIME_FORMAT))
+    updatedAt: StrictStr  | datetime.datetime = Field(default_factory = lambda: datetime.datetime.strptime(str(datetime.datetime.now().strftime(DATE_TIME_FORMAT)) , DATE_TIME_FORMAT))
 
     @model_validator(mode='before')
     @classmethod

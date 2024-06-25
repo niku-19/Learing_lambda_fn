@@ -8,10 +8,10 @@ context = {}
 
 #* CREATE USER EXAMPLE EVENT 
 
-# event = {
-#     "body": "{\"firstName\":\"N\",\"lastName\":\"Gaikwad\", \"age\": 22, \"email\":\"om.gaikwad@braincells.in\" , \"phoneNumber\":\"+916205666646\" , \"password\":\"Nikhil$1999@05@19$;?;\" ,\"isEnabled\": true,\"birthday\":\"1999-05-19 05:30:00\"}",
-#     "routeKey": "POST /user",
-# }
+event = {
+    "body": "{\"firstName\":\"OM\",\"lastName\":\"Gaikwad\", \"age\": 22, \"email\":\"om.gaikwad@braincells.in\" , \"phoneNumber\":\"+916205666646\" , \"password\":\"Nikhil$1999@05@19$;?;\" ,\"isEnabled\": true,\"birthday\":\"1999-05-19 05:30:00\"}",
+    "routeKey": "POST /user",
+}
 
 #* GET USER EXAMPLE EVENT
 # event = {

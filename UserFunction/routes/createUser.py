@@ -31,7 +31,11 @@ def create_user_handler(event , context): #FIXME : event or context should not b
     # FIXME: for now i am adding _id manually - need to be replace
     userId : str = str(ObjectId())
 
+
+    # Updating user with _id 
+    new_user_with_id = {**dict(user), "_id": userId}
+
     with DatabaseConnectionManager() as db :
-        db.users.insert_one({**user.model_dump(), "_id": userId})
+        db.users.insert_one(new_user_with_id)
     
-    return CustomResponse(body = {"message" : "User Created Successfully."} , data = user.model_dump() , statusCode = HTTPStatus.CREATED).response()
+    return CustomResponse(body = {"message" : "User Created Successfully."} , data = new_user_with_id , statusCode = HTTPStatus.CREATED).response()
